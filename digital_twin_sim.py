@@ -79,10 +79,11 @@ try:
             client.publish(TOPIC, json_payload, qos=1)
             
         except Exception as e:
-            print("ERROR: Invalid format. Please use Base,Shoulder,Elbow (e.g., 45,90,180)")
+            print("ERRO: Invalid format. Please use Base,Shoulder,Elbow (e.g., 45,90,180)")
 
 except KeyboardInterrupt:
     print("\nShutting down simulation...")
+    print("\nDisconnected from HiveMQ Cloud.")
 
 client.loop_stop()
 client.disconnect()
